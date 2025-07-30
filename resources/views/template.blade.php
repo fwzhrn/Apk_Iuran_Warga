@@ -88,12 +88,12 @@
                         <li class="nav-item">
                             <span class="nav-link">Halo, {{ Auth::user()->name }}</span>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             {{-- <form action="{{ route('logout') }}" method="POST" class="d-inline">
                                 @csrf
                                 <button class="btn btn-link nav-link" type="submit">Logout</button>
                             </form> --}}
-                        </li>
+                        {{-- </li> --}} 
                     @else
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">Login</a>
