@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>welcome</h1>
-</body>
-</html>
+<!-- filepath: d:\Laravel\iuran_warga\resources\views\home.blade.php -->
+@extends('template')
+
+@section('title', 'Home')
+
+@section('content')
+    <h1>Selamat datang di Aplikasi Iuran Warga!</h1>
+    <p>Silakan gunakan menu di atas untuk navigasi.</p>
+@endsection
