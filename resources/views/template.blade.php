@@ -8,18 +8,68 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" />
     <style>
-        body { font-family: 'Segoe UI', sans-serif; background-color: #f9f9f9; }
-        .navbar-iuran { background: linear-gradient(to right, #4e54c8, #8f94fb); }
-        .navbar-brand { font-weight: 700; letter-spacing: 1.2px; font-size: 24px; color: #fff !important; }
-        .nav-link { color: #fff !important; font-weight: 500; transition: color 0.3s; }
-        .nav-link:hover, .nav-link:focus { color: #d1d8e0 !important; text-decoration: underline; }
-        main.container { padding-top: 32px; padding-bottom: 32px; }
-        main .content-card { background: #fff; border-radius: 8px; padding: 32px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        footer { font-size: 0.95rem; background: linear-gradient(to right, #4e54c8, #8f94fb); color: #fff; }
-        footer h5 { font-weight: 600; }
-        footer ul { padding-left: 0; list-style: none; }
-        footer ul li { margin-bottom: 0.5rem; }
-        footer a:hover { color: #d1d8e0 !important; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .navbar-iuran {
+            background: linear-gradient(to right, #4e54c8, #8f94fb);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            font-size: 24px;
+            color: #fff !important;
+        }
+
+        .nav-link {
+            color: #fff !important;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover,
+        .nav-link:focus {
+            color: #d1d8e0 !important;
+            text-decoration: underline;
+        }
+
+        main.container {
+            padding-top: 32px;
+            padding-bottom: 32px;
+        }
+
+        main .content-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        footer {
+            font-size: 0.95rem;
+            background: linear-gradient(to right, #4e54c8, #8f94fb);
+            color: #fff;
+        }
+
+        footer h5 {
+            font-weight: 600;
+        }
+
+        footer ul {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        footer ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer a:hover {
+            color: #d1d8e0 !important;
+        }
     </style>
 </head>
 <body>
