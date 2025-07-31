@@ -64,10 +64,10 @@
         </div>
         <ul class="nav flex-column flex-grow-1 p-3 gap-2">
             <li class="nav-item">
-                <a href="/administrator/dashboard" class="nav-link">Dashboard</a>
+                <a href="/administrator/dashboard"  class="nav-link">Dashboard</a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">Data Warga</a>
+                <a href="/administrator/data-warga" class="nav-link">Data Warga</a>
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link">Laporan</a>

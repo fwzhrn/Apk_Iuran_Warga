@@ -47,5 +47,26 @@ class AuthController extends Controller
 
         return redirect()->route('login')->with('success', 'Registrasi berhasil, silakan login.');
     }
-    
+    public function profile()
+    {
+        return view('profile', ['user' => Auth::user()]);
+    }
+    public function editProfile()
+    {
+        return view('profile-edit', ['user' => Auth::user()]);
+    }
+    public function updateProfile(Request $request)
+    {
+        $user = User::find(Auth::id());
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'username' => 'required|string|max:255|unique:users,username,' . $user->id,
+        ]);
+
+        $user->name = $request->name;
+        $user->username = $request->username;
+        $user->save();
+
+        return redirect()->route('profile')->with('success', 'Profil berhasil diperbarui.');
+}
 }

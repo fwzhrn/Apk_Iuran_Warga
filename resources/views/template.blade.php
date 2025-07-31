@@ -73,6 +73,7 @@
     </style>
 </head>
 <body>
+    
     <nav class="navbar navbar-expand-sm navbar-iuran shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="/">Iuran Warga</a>
@@ -85,15 +86,26 @@
                         <a class="nav-link" href="/home">Home</a>
                     </li>
                     @auth
-                        <li class="nav-item">
-                            <span class="nav-link">Halo, {{ Auth::user()->name }}</span>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarProfile" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Halo, {{ Auth::user()->name }}
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarProfile">
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('profile') }}">
+                                        <i class="fas fa-user me-2"></i> Profil
+                                    </a>
+                                </li>
+                                <li>
+                                    {{-- <form action="{{ route('logout') }}" method="POST" class="d-inline">
+                                        @csrf
+                                        <button class="dropdown-item" type="submit">
+                                            <i class="fas fa-sign-out-alt me-2"></i> Logout
+                                        </button>
+                                    </form> --}}
+                                </li>
+                            </ul>
                         </li>
-                        {{-- <li class="nav-item">
-                            {{-- <form action="{{ route('logout') }}" method="POST" class="d-inline">
-                                @csrf
-                                <button class="btn btn-link nav-link" type="submit">Logout</button>
-                            </form> --}}
-                        {{-- </li> --}} 
                     @else
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">Login</a>
