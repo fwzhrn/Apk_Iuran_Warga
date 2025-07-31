@@ -24,6 +24,7 @@ Route::middleware('admin')->group(function () {
     Route::get('/administrator/data-warga', [AdminController::class, 'dataWarga'])->name('admin.data-warga');
     Route::get('/administrator/data-warga/create', [AdminController::class, 'createWarga'])->name('admin.data-warga.create');
     Route::post('/administrator/data-warga', [AdminController::class, 'storeWarga'])->name('admin.data-warga.store');
+    Route::get('/administrator/kategori-iuran', [AdminController::class, 'kategoriIuran'])->name('admin.kategori-iuran');
 });
 
 Route::middleware('warga')->group(function () {

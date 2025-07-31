@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use App\Models\Dues_category;
 
 class AdminController extends Controller
 {
@@ -84,8 +85,13 @@ class AdminController extends Controller
     // Delete data
     public function deleteWarga($id)
     {
-        $user = \App\Models\User::findOrFail($id);
+        $user = User::findOrFail($id);
         $user->delete();
         return redirect()->route('admin.data-warga')->with('success', 'Data warga berhasil dihapus.');
+    }
+    public function kategoriIuran()
+    {
+        $kategori = Dues_category::all();
+        return view('admin.kategori-iuran', compact('kategori'));
     }
 }
