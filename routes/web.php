@@ -25,6 +25,11 @@ Route::middleware('admin')->group(function () {
     Route::get('/administrator/data-warga/create', [AdminController::class, 'createWarga'])->name('admin.data-warga.create');
     Route::post('/administrator/data-warga', [AdminController::class, 'storeWarga'])->name('admin.data-warga.store');
     Route::get('/administrator/kategori-iuran', [AdminController::class, 'kategoriIuran'])->name('admin.kategori-iuran');
+    Route::get('/administrator/kategori-iuran/create', [AdminController::class, 'createKategori'])->name('admin.kategori-iuran.create');
+    Route::post('/administrator/kategori-iuran', [AdminController::class, 'storeKategori'])->name('admin.kategori-iuran.store');
+    Route::get('/administrator/kategori-iuran/{id}/edit', [AdminController::class, 'editKategori'])->name('admin.kategori-iuran.edit');
+    Route::put('/administrator/kategori-iuran/{id}', [AdminController::class, 'updateKategori'])->name('admin.kategori-iuran.update');
+    Route::delete('/administrator/kategori-iuran/{id}', [AdminController::class, 'deleteKategori'])->name('admin.kategori-iuran.delete');
 });
 
 Route::middleware('warga')->group(function () {

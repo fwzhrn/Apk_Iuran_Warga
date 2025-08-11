@@ -63,14 +63,14 @@ class AdminController extends Controller
 // Edit form
     public function editWarga($id)
     {
-        $user = \App\Models\User::findOrFail($id);
+        $user = User::findOrFail($id);
         return view('admin.edit-warga', compact('user'));
     }
 
     // Update data
     public function updateWarga(Request $request, $id)
     {
-        $user = \App\Models\User::findOrFail($id);
+        $user = User::findOrFail($id);
         $request->validate([
             'name' => 'required|string|max:255',
             'username' => 'required|string|max:255|unique:users,username,' . $user->id,
@@ -93,5 +93,61 @@ class AdminController extends Controller
     {
         $kategori = Dues_category::all();
         return view('admin.kategori-iuran', compact('kategori'));
+    }
+    
+    public function createKategori()
+    {
+        return view('admin.create-kategori');
+    }
+    
+    public function storeKategori(Request $request)
+    {
+        $request->validate([
+            'period' => 'required|integer|min:1',
+            'nominal' => 'required|integer|min:1000',
+            'status' => 'required|in:aktif,tidak aktif',
+        ]);
+        
+        Dues_category::create([
+            'period' => $request->period,
+            'nominal' => $request->nominal,
+            'status' => $request->status,
+        ]);
+        
+        return redirect()->route('admin.kategori-iuran')->with('success', 'Kategori iuran berhasil ditambahkan.');
+    }
+    
+    // Edit form
+    public function editKategori($id)
+    {
+        $kategori = Dues_category::findOrFail($id);
+        return view('admin.edit-kategori', compact('kategori'));
+    }
+    
+    // Update data
+    public function updateKategori(Request $request, $id)
+    {
+        $kategori = Dues_category::findOrFail($id);
+        $request->validate([
+            'period' => 'required|integer|min:1',
+            'nominal' => 'required|integer|min:1000',
+            'status' => 'required|in:aktif,tidak aktif',
+        ]);
+        
+        $kategori->update([
+            'period' => $request->period,
+            'nominal' => $request->nominal,
+            'status' => $request->status,
+        ]);
+        
+        return redirect()->route('admin.kategori-iuran')->with('success', 'Kategori iuran berhasil diupdate.');
+    }
+    
+    // Delete data
+    public function deleteKategori($id)
+    {
+        $kategori = Dues_category::findOrFail($id);
+        $kategori->delete();
+        return redirect()->route('admin.kategori-iuran')->with('success', 'Kategori iuran berhasil dihapus.');
     }
 }

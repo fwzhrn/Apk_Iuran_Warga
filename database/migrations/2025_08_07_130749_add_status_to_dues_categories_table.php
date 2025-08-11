@@ -11,11 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('dues_categories', function (Blueprint $table) {
-            $table->id();
-            $table->integer('period');
-            $table->integer('nominal');
-            $table->timestamps();
+        Schema::table('dues_categories', function (Blueprint $table) {
+            $table->string('status')->after('nominal');
         });
     }
 
@@ -24,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('dues_categories');
+        Schema::table('dues_categories', function (Blueprint $table) {
+            $table->dropColumn('status');
+        });
     }
 };
