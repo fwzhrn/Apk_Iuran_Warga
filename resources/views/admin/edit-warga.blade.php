@@ -3,9 +3,36 @@
 @section('title', 'Edit Data Warga')
 
 @section('content')
+<style>
+    .card {
+        border-radius: 12px;
+    }
+    .card-header {
+        background-color: #56b6c2;
+        color: white;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+    }
+    .btn-soft-primary {
+        background-color: #a3c4f3;
+        color: #1a3e72;
+        font-weight: 600;
+        border-radius: 6px;
+    }
+    .btn-soft-secondary {
+        background-color: #d9d9d9;
+        color: #333;
+        font-weight: 600;
+        border-radius: 6px;
+    }
+    .form-control {
+        border-radius: 6px;
+    }
+</style>
+
 <div class="container py-4">
-    <div class="card mx-auto shadow" style="max-width: 450px; border-radius: 12px;">
-        <div class="card-header bg-primary text-white" style="border-top-left-radius: 12px; border-top-right-radius: 12px;">
+    <div class="card mx-auto shadow" style="max-width: 450px;">
+        <div class="card-header">
             <h5 class="mb-0">Edit Data Warga</h5>
         </div>
         <div class="card-body" style="color: #33475b;">
@@ -23,7 +50,6 @@
                         required
                         value="{{ old('name', $user->name) }}"
                         autofocus
-                        style="border-radius: 6px;"
                     >
                     @error('name')
                         <div class="invalid-feedback">{{ $message }}</div>
@@ -39,17 +65,16 @@
                         class="form-control @error('username') is-invalid @enderror"
                         required
                         value="{{ old('username', $user->username) }}"
-                        style="border-radius: 6px;"
                     >
                     @error('username')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
 
-                <button type="submit" class="btn btn-success w-100" style="font-weight: 600;">
+                <button type="submit" class="btn btn-soft-primary w-100">
                     Simpan Perubahan
                 </button>
-                <a href="{{ route('admin.data-warga') }}" class="btn btn-secondary w-100 mt-2" style="font-weight: 600;">
+                <a href="{{ route('admin.data-warga') }}" class="btn btn-soft-secondary w-100 mt-2">
                     Kembali
                 </a>
             </form>

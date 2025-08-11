@@ -61,10 +61,10 @@
                         </button>
                     </form>
 
-                    <div class="mt-3 text-center">
+                    {{-- <div class="mt-3 text-center">
                         <span>Belum punya akun?</span>
                         <a href="{{ route('admin.register') }}">Sign Up</a>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
