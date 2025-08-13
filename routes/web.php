@@ -30,7 +30,6 @@ Route::middleware('admin')->group(function () {
     Route::get('/administrator/kategori-iuran/{id}/edit', [AdminController::class, 'editKategori'])->name('admin.kategori-iuran.edit');
     Route::put('/administrator/kategori-iuran/{id}', [AdminController::class, 'updateKategori'])->name('admin.kategori-iuran.update');
     Route::delete('/administrator/kategori-iuran/{id}', [AdminController::class, 'deleteKategori'])->name('admin.kategori-iuran.delete');
-    Route::post('/payment/process', [PaymentController::class, 'process'])->name('payment.process');
 });
 
 Route::middleware('warga')->group(function () {

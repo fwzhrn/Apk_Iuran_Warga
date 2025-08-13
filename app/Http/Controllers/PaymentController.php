@@ -17,4 +17,9 @@ class PaymentController extends Controller
 
         return redirect()->back()->with('success', 'Pembayaran berhasil diproses!');
     }
+
+    public function showForm()
+    {
+        return view('admin.payment');
+    }
 }
