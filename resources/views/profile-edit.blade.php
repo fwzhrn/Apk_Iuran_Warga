@@ -46,6 +46,28 @@
                     @enderror
                 </div>
 
+                <div class="mb-3">
+                    <label for="dues_category_id" class="form-label">Kategori Iuran</label>
+                    <select
+                        id="dues_category_id"
+                        name="dues_category_id"
+                        class="form-control @error('dues_category_id') is-invalid @enderror"
+                        required
+                        style="border-radius: 6px;"
+                    >
+                        <option value="">-- Pilih Kategori Iuran --</option>
+                        @foreach($categories as $category)
+                            <option value="{{ $category->id }}" 
+                                {{ old('dues_category_id', $user->duesMembers->first()->dues_category_id ?? '') == $category->id ? 'selected' : '' }}>
+                                {{ $category->display_name }} ({{ $category->status }})
+                            </option>
+                        @endforeach
+                    </select>
+                    @error('dues_category_id')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+
                 <button type="submit"
                     class="btn"
                     style="background-color: #a3c4f3; color: #1a3e72; font-weight: 600; width: 100%; border-radius: 6px;">
